@@ -1,0 +1,5 @@
+require("bloomai.options")
+require("bloomai.keymaps")
+require("config.lazy_init")
+local todo_float = require("todofloat")
+todo_float.setup({ target_file = "~/Documents/todo.md" })
