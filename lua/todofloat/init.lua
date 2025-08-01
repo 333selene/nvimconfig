@@ -54,6 +54,7 @@ local function open_floating_file(target_file)
 			end
 		end,
 	})
+	vim.api.nvim_buf_set_keymap(buf, "n", "<leader>w", ":w<CR>", { noremap = true, silent = true })
 end
 
 local function setup_user_commands(opts)
