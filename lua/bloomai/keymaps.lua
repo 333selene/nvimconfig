@@ -15,6 +15,9 @@ vim.g.maplocalleader = " "
 -- TODO plugin
 vim.keymap.set("n", "<leader>td", ":Td<CR>")
 
+-- DIAGNOSTIC
+vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
+
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
