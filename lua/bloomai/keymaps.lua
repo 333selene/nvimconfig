@@ -12,6 +12,11 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- run query --
+vim.keymap.set("n", "<leader>rq", "<S-v><S-b><S-b>")
+
+-- kitty copy
+vim.keymap.set("v", "<leader>c", '<cmd>lua require("osc52").copy_visual()<CR>', { desc = "Copy (to clipboard)" })
 -- TODO plugin
 vim.keymap.set("n", "<leader>td", ":Td<CR>")
 
