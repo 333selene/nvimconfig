@@ -23,6 +23,11 @@ vim.keymap.set("n", "<leader>td", ":Td<CR>")
 -- DIAGNOSTIC
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
 
+-- nginx restart container
+vim.keymap.set("n", "<leader>rr", function()
+	vim.cmd("!docker compose up -d --no-deps --build nginx")
+end, { desc = "rebuild nginx container" })
+
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",

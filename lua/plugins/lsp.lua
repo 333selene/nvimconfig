@@ -65,6 +65,7 @@ return {
 				},
 				postgrestools = {},
 				pgformatter = {},
+				html = {},
 			}
 
 			-- setup each server
