@@ -29,6 +29,7 @@ return { -- Autoformat
 			end
 		end,
 		formatters_by_ft = {
+			python = { "ruff", "black" },
 			lua = { "stylua" },
 			javascript = { "prettierd", "prettier" },
 			javascriptreact = { "prettierd", "prettier" },

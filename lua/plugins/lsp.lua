@@ -38,6 +38,7 @@ return {
 						},
 					},
 				},
+				cssls = {},
 
 				pyright = {
 					root_dir = function()
@@ -56,13 +57,27 @@ return {
 					end,
 				},
 				vtsls = {
-					-- filetypes are set by lspconfig: js, jsx, ts, tsx, etc.
-					settings = {
-						typescript = {
-							tsserver = { maxTsServerMemory = 4096 },
+					ts_ls = {
+						globalPlugins = {
+							{
+								configNamespace = "typescript",
+								enableForWorkspaceTypeScriptVersions = true,
+							},
 						},
 					},
 				},
+				ts_ls = {
+					preferences = {
+						importModuleSpecifier = "non-relative",
+						updateImportsOnFileMove = {
+							enabled = "always",
+						},
+						suggest = {
+							completeFunctionCalls = true,
+						},
+					},
+				},
+
 				postgrestools = {},
 				pgformatter = {},
 				html = {},
