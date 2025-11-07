@@ -12,8 +12,9 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- run query --
-vim.keymap.set("n", "<leader>rq", "<S-v><S-b><S-b>")
+-- new windows
+vim.keymap.set("n", "<leader>v", "<cmd>vnew<CR>", { desc = "vnew" })
+vim.keymap.set("n", "<leader>V", "<cmd>new<CR>", { desc = "new" })
 
 -- kitty copy
 vim.keymap.set("v", "<leader>c", '<cmd>lua require("osc52").copy_visual()<CR>', { desc = "Copy (to clipboard)" })

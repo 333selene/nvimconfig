@@ -47,6 +47,9 @@ return {
 					settings = {
 						python = {
 							pythonPath = vim.fn.exepath("python3"),
+							analysis = {
+								diagnosticMode = "workspace",
+							},
 						},
 					},
 				},
@@ -78,8 +81,6 @@ return {
 					},
 				},
 
-				postgrestools = {},
-				pgformatter = {},
 				html = {},
 			}
 

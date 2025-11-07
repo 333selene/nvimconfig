@@ -1,6 +1,11 @@
 return {
-	"L-Colombo/oldschool.nvim",
-	config = true,
+	"folke/tokyonight.nvim",
 	-- to ovverride palette colors:
-	-- opts = { <color> = "<hex value>"}
+	opts = {
+		transparent = true,
+		styles = {
+			sidebars = "transparent",
+			floats = "transparent",
+		},
+	},
 }
