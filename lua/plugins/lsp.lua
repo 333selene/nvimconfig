@@ -19,31 +19,27 @@ return {
 			{ "j-hui/fidget.nvim", opts = {} },
 			"saghen/blink.cmp",
 		},
+
 		config = function()
-			-- ensure mason is setup for installing servers if desired
-			require("mason").setup()
-
-			local lspconfig = require("lspconfig")
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
+			vim.lsp.config("*", {
+				root_markers = { ".git" },
+			})
 
-			-- define servers with root_dir always set to cwd
 			local servers = {
+				clangd = {
+					root_markers = { ".clang-format", "compile_commands.json" },
+				},
 				lua_ls = {
-					root_dir = function()
-						return vim.loop.cwd()
-					end,
+
 					settings = {
 						Lua = {
 							completion = { callSnippet = "Replace" },
 						},
 					},
 				},
-				cssls = {},
-
 				pyright = {
-					root_dir = function()
-						return vim.loop.cwd()
-					end,
+					root_markers = { ".venv", ".git" },
 					settings = {
 						python = {
 							pythonPath = vim.fn.exepath("python3"),
@@ -53,13 +49,10 @@ return {
 						},
 					},
 				},
-
-				ruff = {
-					root_dir = function()
-						return vim.loop.cwd()
-					end,
-				},
+				ruff = {},
+				cssls = {},
 				vtsls = {
+
 					ts_ls = {
 						globalPlugins = {
 							{
@@ -73,23 +66,21 @@ return {
 					preferences = {
 						importModuleSpecifier = "non-relative",
 						updateImportsOnFileMove = {
-							enabled = "always",
+							enables = "always",
 						},
 						suggest = {
 							completeFunctionCalls = true,
 						},
 					},
 				},
-
 				html = {},
 			}
 
-			-- setup each server
 			for name, cfg in pairs(servers) do
 				cfg.capabilities = capabilities
-				lspconfig[name].setup(cfg)
+				vim.lsp.config(name,cfg)
+                vim.lsp.enable(name)
 			end
-			-- setup() is also available as an alias
 		end,
 	},
 }
