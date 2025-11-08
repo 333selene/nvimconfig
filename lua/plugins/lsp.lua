@@ -61,6 +61,12 @@ return {
 							},
 						},
 					},
+					eslint_d = {
+						globalPlugins = {
+							configNamespace = "typescript",
+							enableForWorkspaceTypeScriptVersions = true,
+						},
+					},
 				},
 				ts_ls = {
 					preferences = {
@@ -73,13 +79,14 @@ return {
 						},
 					},
 				},
+				eslint_d = {},
 				html = {},
 			}
 
 			for name, cfg in pairs(servers) do
 				cfg.capabilities = capabilities
-				vim.lsp.config(name,cfg)
-                vim.lsp.enable(name)
+				vim.lsp.config(name, cfg)
+				vim.lsp.enable(name)
 			end
 		end,
 	},
