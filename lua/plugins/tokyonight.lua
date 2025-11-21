@@ -1,11 +1,10 @@
 return {
-	"folke/tokyonight.nvim",
-	-- to ovverride palette colors:
-	opts = {
-		transparent = true,
-		styles = {
-			sidebars = "transparent",
-			floats = "transparent",
-		},
-	},
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000,
+    config = true,
+    opts = {
+        transparent_mode = true,
+        terminal_colors = true,
+        contrast = "hard"
+    }
 }
