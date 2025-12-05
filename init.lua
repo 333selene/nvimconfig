@@ -11,3 +11,8 @@ vim.cmd([[
     highlight NonText ctermbg=none
     colorscheme gruvbox
 ]])
+vim.api.nvim_create_autocmd("TextYankPost", {
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+})

@@ -63,4 +63,4 @@ vim.opt.fileencoding = "utf-8" -- the encoding written to a file
 -- 24 various
 vim.opt.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
 
-vim.opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
+
