@@ -40,9 +40,11 @@ return { -- Autocompletion
 
 				local python_snips = require("snippets.python").python_snips
 				local tsx_snips = require("snippets.tsx").tsx_snips
+				local sql_snips = require("snippets.sql").sql_snips
 
 				luasnip.add_snippets("python", python_snips)
 				luasnip.add_snippets("tsx", tsx_snips)
+				luasnip.add_snippets("sql", sql_snips)
 
 				vim.keymap.set({ "i", "s" }, "<C-l>", function()
 					if luasnip.expand_or_jumpable() then

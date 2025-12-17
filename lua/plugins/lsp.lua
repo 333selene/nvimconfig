@@ -52,22 +52,34 @@ return {
 				ruff = {},
 				cssls = {},
 				vtsls = {
-					filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+					filetypes = {
+						"javascript",
+						"javascriptreact",
+						"javascript.jsx",
+						"typescript",
+						"typescriptreact",
+						"typescript.tsx",
+					},
 					settings = {
-						vtsls = {
-							-- autoUseWorkspaceTsdk = true,
+						typescript = {
+							updateImportsOnFileMove = { enabled = "always" },
+							suggest = {
+								completeFunctionCalls = true,
+							},
 							tsserver = {
-								log = "verbose",
-								maxTsServerMemory = 10000,
-								globalPlugins = {
-									{
-										name = "@vue/typescript-plugin",
-										location = "/opt/homebrew/lib/node_modules/@vue/typescript-plugin",
-										languages = { "vue" },
-										configNamespace = "typescript",
-										enableForWorkspaceTypeScriptVersions = true,
-									},
-								},
+								maxTsServerMemory = 32768,
+							},
+							inlayHints = {
+								enumMemberValues = { enabled = true },
+								functionLikeReturnTypes = { enabled = true },
+								parameterNames = { enabled = "literals" },
+								parameterTypes = { enabled = true },
+								propertyDeclarationTypes = { enabled = true },
+								variableTypes = { enabled = false },
+							},
+							preferences = {
+								preferTypeOnlyAutoImports = true,
+								includePackageJsonAutoImports = "off",
 							},
 						},
 					},

@@ -15,6 +15,12 @@ vim.g.maplocalleader = " "
 -- new windows
 vim.keymap.set("n", "<leader>v", "<cmd>vnew<CR>", { desc = "vnew" })
 vim.keymap.set("n", "<leader>V", "<cmd>new<CR>", { desc = "new" })
+vim.keymap.set("n", "<leader>bb", "<cmd>bd<CR>", { desc = "buffer delete" })
+vim.keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "write" })
+vim.keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "quit" })
+
+--DBEE
+vim.keymap.set("n", "<leader>db", "<cmd>Dbee<CR>", { desc = "open Dbee" })
 
 -- kitty copy
 vim.keymap.set("v", "<leader>c", '<cmd>lua require("osc52").copy_visual()<CR>', { desc = "Copy (to clipboard)" })
